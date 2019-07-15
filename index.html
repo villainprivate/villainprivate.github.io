@@ -1,0 +1,329 @@
+
+<!DOCTYPE HTML>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Exspiravit | Home</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/private.css" rel="stylesheet" />
+	<link href="css/stars.css" rel="stylesheet" />
+	<link href="css/animate.css" rel="stylesheet" />
+	<link href="favicon.png" rel="icon" type="images/png" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+	
+<script>
+master = window.parent.document;
+head = master.getElementsByTagName("head")[0];
+favicon = master.createElement("link");
+favicon.rel = "shortcut icon";
+favicon.type = "image/png";
+favicon.href = "favicon.png";
+head.appendChild(favicon);
+</script>
+
+<div class="alert">
+<span class="dismiss" onclick="dismissAlert()"><label for="notify-1">
+  <input id="notify-1" type="checkbox">
+  <div id="notification-bar">
+    <div class="container">
+      <span class="dismiss" onclick="dismissAlert()"><i class="fa fa-times-circle"></i></span>
+      <p>
+        <i class="fa fa-info-circle"></i><strong>SERVICES:</strong> <font color="#2cff00">ONLINE</font>
+      </p>
+      <a class="btn-action" onclick="window.location.href='/private/'">JOIN</a>
+    </div>
+  </div>
+</div>
+</label></span>
+
+<script>
+  let dismissedAlerts = JSON.parse(localStorage.getItem('dismissedAlerts')) || [];
+
+  const alertBanner = document.querySelector('.alert');
+  if (dismissedAlerts.includes(alertBanner.id)) alertBanner.style.display = 'none';
+
+  function dismissAlert() {
+    alertBanner.style.display = 'none';
+    dismissedAlerts.push(alertBanner.id);
+    localStorage.setItem('dismissedAlerts', JSON.stringify(dismissedAlerts));
+  }
+</script>
+
+<style>
+.wrapper {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #fff;
+}
+
+.block {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+#notification-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #444;
+  border-bottom: 1px solid #333;
+  clear: both;
+  z-index: 999;
+  border-bottom: 1px solid red;
+  text-decoration: none;
+}
+
+#notification-bar .container {
+  width: 800px;
+  height: 45px;
+  margin: 0 auto;
+  padding: 5px;
+  background-color: #444;
+}
+
+#notification-bar .fa-info-circle {
+  display: inline-block;
+  font-size: 45px;
+  float: left;
+  margin-right: 20px;
+  color: #ffde62;
+}
+
+#notification-bar p {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 300;
+  float: left;
+  margin: 0 25px 0 0;
+  padding: 0;
+  line-height: 45px;
+  color: #fff;
+}
+
+#notification-bar a.btn-action {
+  display: inline-block;
+  width: 110px;
+  height: 35px;
+  line-height: 35px;
+  margin-top: 5px;
+  padding: 0px 12px;
+  float: right;
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  
+  -webkit-border-radius: 5px;
+  /* Firefox 1-3.6 */
+  
+  -moz-border-radius: 5px;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  
+  border-radius: 5px;
+  text-align: center;
+  background-color: #ffde62;
+  color: #111;
+  text-decoration: none;
+}
+
+#notification-bar a.btn-action:hover {
+  background-color: #ffd24d;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.fa-times-circle {
+  float: right;
+  margin-top: 8px;
+  font-size: 30px;
+  color: #222;
+  text-align: right;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.fa-times-circle:hover {
+  color: #fff;
+}
+
+input[type=text] {
+  width: 230px;
+  height: 30px;
+  font-size: 18px;
+  margin: 5px 0 0 0;
+  padding: 0 0 0 5px;
+  border: 1px solid #555;
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  
+  -webkit-border-radius: 3px;
+  /* Firefox 1-3.6 */
+  
+  -moz-border-radius: 3px;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  
+  border-radius: 3px;
+}
+
+input[type=text] + input[type=text] {
+  margin-left: 10px;
+}
+/* Initial bar stage  */
+
+input[type=checkbox] ~ #notification-bar {
+  /* Animation */
+  
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  /* Start animation to go down */
+  
+  -webkit-animation-name: goDown;
+  animation-name: goDown;
+}
+/* Close the bar */
+
+input[type=checkbox]:checked ~ #notification-bar {
+  /* Animation */
+  
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  /* Start animation to go up */
+  
+  -webkit-animation-name: goUp;
+  animation-name: goUp;
+}
+
+input[type=checkbox] ~ .fa-long-arrow-down {
+  position: absolute;
+  display: none;
+  right: 10%;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked ~ .fa-long-arrow-down {
+  display: block;
+  top: -35px;
+  padding: 10px;
+  font-size: 50px;
+  color: #ffde62;
+  background-color: #444;
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  
+  -webkit-border-radius: 5px;
+  /* Firefox 1-3.6 */
+  
+  -moz-border-radius: 5px;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  
+  border-radius: 5px;
+}
+
+input[type=checkbox]:checked ~ .fa-long-arrow-down:hover {
+  top: -15px;
+  color: #ccc;
+}
+/* ANIMATION for go up */
+
+@-webkit-keyframes goUp {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+  100% {
+    -webkit-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
+  }
+}
+
+@keyframes goUp {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+  100% {
+    -webkit-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
+  }
+}
+/* ANIMATION for go down */
+
+@-webkit-keyframes goDown {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes goDown {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.find-me {
+  position: relative;
+  margin: 100px;
+  color: #fff;
+}
+
+.find-me a {
+  color: #fff;
+}
+</style>
+	
+</head>
+<body>
+<div id="stars"></div>
+
+<div id="stars2"></div>
+
+<div id="stars3"></div>
+
+<div id="stars4"></div>
+
+<div id="container"><a href="/private/"><img class="private" src="villain.png">
+  <div class="text-block">
+    <h4>PRIVATE</h4>
+    <p>Exspiravit Market</p>
+  </div>
+</a>
+<div class="swim animated infinite pulse">Exspiravit</div>
+
+<div style="text-decoration: none;" class="links animated bounceIn fadeIn"><i class="fa fa-home"></i> | <a href="https://disboard.org/server/592901190153404417" target="_b">DISCORD</a> <font color="#2B2B2D">|</font> <a href="https://twitter.com/VillainPRIVATE" target="_b">TWITTER</a> <font color="#2B2B2D">|</font> <a href="https://twitch.tv/team/daddy" target="_b">TEAM</a> <font color="#2B2B2D">|</font> <a href="mailto:contact@e-criminal.org">CONTACT ME</a> |
+</div>
+
+<p>
+<audio autoplay>
+  <source loop src="villain.mp3" type="audio/mpeg">
+ villain
+</audio>
+</p>
+</body>
+</html>
+
+    <footer>
+        Copyright <i class="fa fa-copyright" aria-hidden="true"></i> Exspiravit - All rights reserved.<br><b><a href="private/terms-of-service/" style="text-decoration: none;" target="_blank"><font size="1" color="#ff0000">Abide by the Rules</a></font></b></i>
+    <footer>

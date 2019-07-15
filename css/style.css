@@ -1,0 +1,75 @@
+@font-face {
+  font-family:'barthowheel';
+  src: url('../barthowheel.ttf') format('truetype');
+  font-weight: normal;
+}
+
+body {
+  background: black;
+  background-image:
+    radial-gradient(mediumpurple 5%, transparent 0.8),
+    radial-gradient(plum 5%, transparent 0.2);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  font-family: 'barthowheel';
+  overflow: hidden;
+  text-decoration: none;
+}
+
+
+#container {
+  width: 450px;
+  height: 450px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0, 0.6);
+  border-radius: 40px;
+
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+img {
+  width: 350px;
+  height: 350px;
+  border: #2B2B2D solid 3px;
+}
+
+.swim {
+  font-size: 48px;
+  color: #F3CF8A;
+  padding-top: 15px;
+  font-family: 'barthowheel';
+}
+
+.links {
+  font-size: 24px;
+  color: #2B2B2D;
+  padding-top: 10px;
+  transition: all 1s ease-in-out;
+  font-family: 'barthowheel';
+}
+
+.links:hover {
+ margin-top: 10px;
+ transition: all 1s ease-in-out;
+}
+
+
+a {
+  color: #F3CF8A;
+  transition: all 1s ease-in-out;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2B2B2D;
+  transition: all 1s ease-in-out;
+}

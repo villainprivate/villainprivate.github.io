@@ -1,0 +1,15 @@
+.private {
+  position: relative;
+  font-family: Arial;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 110px;
+  right: 63px;
+  background-color: black;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 2px solid #ffde62;
+}

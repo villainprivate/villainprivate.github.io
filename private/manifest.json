@@ -1,0 +1,8 @@
+{
+  "name": "Villains Website",
+  "short_name": "vilweb",
+  "lang": "en-US",
+  "start_url": "https://e-criminal.org/",
+  "display": "standalone",
+  "theme_color": "#ffde62"
+}
